@@ -2,12 +2,12 @@ import sys
 from Adafruit_IO import MQTTClient
 import time
 import random
-from simple_ai import *
+# from simple_ai import *
 from uart import *
 
 AIO_FEED_ID = ["nutnhan1", "nutnhan2"]
 AIO_USERNAME = "vantri15042003"
-AIO_KEY = "aio_HgTx27tR4yLkGKlvbozdAyUInYXi"
+AIO_KEY = "aio_bgcn52H8hKl0bxtoQKVlFcUuG1TM"
 
 def connected(client):
     print("Ket noi thanh cong ...")
@@ -49,14 +49,14 @@ ai_res = ""
 prev_ai_res = ""
 
 while True:
-    counter_ai = counter_ai - 1
-    if counter_ai <= 0:
-        counter_ai = 5
-        prev_ai_res = ai_res
-        ai_res = image_detector()
-        if ai_res != prev_ai_res :
-            print(ai_res)
-            client.publish("ai" , ai_res)
+    # counter_ai = counter_ai - 1
+    # if counter_ai <= 0:
+    #     counter_ai = 5
+    #     prev_ai_res = ai_res
+    #     ai_res = image_detector()
+    #     if ai_res != prev_ai_res :
+    #         print(ai_res)
+    #         client.publish("ai" , ai_res)
     
     readSerial(client)
     # # Listen to the keyboard for presses.
