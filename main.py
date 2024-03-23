@@ -2,7 +2,7 @@ import sys
 from Adafruit_IO import MQTTClient
 import time
 import random
-from simple_ai import *
+# from simple_ai import *
 from uart import *
 
 AIO_FEED_ID = ["nutnhan1", "nutnhan2"]

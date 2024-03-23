@@ -13,7 +13,7 @@ def getPort():
             splitPort = strPort.split(" ")
             commPort = (splitPort[0])
     #return commPort
-    return "/dev/pts/8"
+    return "/dev/pts/5"
 
 if getPort() != "None":
     ser = serial.Serial( port=getPort(), baudrate=115200)
@@ -39,6 +39,7 @@ def readSerial(client):
         global mess
         mess = mess + ser.read(bytesToRead).decode("UTF-8")
         while ("#" in mess) and ("!" in mess):
+            print("da nhan duoc du lieu")
             start = mess.find("!")
             end = mess.find("#")
             processData(client, mess[start:end + 1])
